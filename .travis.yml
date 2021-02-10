@@ -3,8 +3,8 @@ services:
 install:
   - echo "No hay nada que instalar"
 script:
-  - docker build -t saludo-samuel .
-  - docker tag saludo-samuel aosorio2020/saludo-armando:latest
+  - docker build -t saludo-armando .
+  - docker tag saludo-armando aosorio2020/saludo-armando:latest
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push aosorio2020/saludo-armando

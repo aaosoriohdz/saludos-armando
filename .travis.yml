@@ -4,7 +4,7 @@ install:
   - echo "No hay nada que instalar"
 script:
   - docker build -t saludo-armando .
-  - docker tag saludo-armando aosorio2020/saludo-armando:latest
+  - docker tag saludo-armando aosorio2020/saludo-armando:0.0.1
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push aosorio2020/saludo-armando
+  - docker push aosorio2020/saludo-armando:0.0.1
